@@ -3,23 +3,16 @@ package com.github.florent37.materialviewpager.sample;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.crashlytics.android.Crashlytics;
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
 import com.github.florent37.materialviewpager.sample.fragment.RecyclerViewFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends DrawerActivity {
 
@@ -63,18 +56,17 @@ public class MainActivity extends DrawerActivity {
             public CharSequence getPageTitle(int position) {
                 switch (position % 4) {
                     case 0:
-                        return "Selection";
+                        return "동네 예보";
                     case 1:
-                        return "Actualités";
+                        return "중기 예보";
                     case 2:
-                        return "Professionnel";
+                        return "대기 정보";
                     case 3:
                         return "Divertissement";
                 }
                 return "";
             }
         });
-
         mViewPager.setMaterialViewPagerListener(new MaterialViewPager.Listener() {
             @Override
             public HeaderDesign getHeaderDesign(int page) {
@@ -112,7 +104,7 @@ public class MainActivity extends DrawerActivity {
                 @Override
                 public void onClick(View v) {
                     mViewPager.notifyHeaderChanged();
-                    Toast.makeText(getApplicationContext(), "Yes, the title is clickable", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "우산과 마스크를 지켜주는 미세한 날씨입니다.", Toast.LENGTH_SHORT).show();
                 }
             });
         }

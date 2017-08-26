@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">미세한 날씨</string>
+    <string name="location_search_edit_name">지역검색</string>
+    <string name="update_time_label">업데이트 시간</string>
+</resources>
